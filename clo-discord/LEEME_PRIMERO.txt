@@ -1,0 +1,46 @@
+CLO DISCORD — TODO DE UNA
+
+1) Crea un bot NUEVO en Discord Developer Portal para Clo.
+   Activa MESSAGE CONTENT INTENT.
+   Permisos: View Channels, Send Messages, Read Message History.
+   Crea un canal propio para Clo y copia su ID.
+
+2) En el MISMO Supabase de Sy:
+   SQL Editor -> pega y ejecuta TODO setup_clo.sql.
+   Usa Run with RLS.
+
+3) Crea una API key en Claude Platform (Anthropic).
+
+4) Crea repo privado 'clo-discord' en GitHub.
+   Descomprime este ZIP y sube esta carpeta.
+   Desde PowerShell dentro de la carpeta:
+      git init
+      git add .
+      git commit -m "Primer commit de Clo"
+      git branch -M main
+      git remote add origin URL_DE_TU_REPO
+      git push -u origin main
+
+5) Railway -> nuevo servicio desde ese repo.
+   Variables:
+      DISCORD_TOKEN = token del bot NUEVO de Clo
+      ANTHROPIC_API_KEY = clave Anthropic
+      SUPABASE_URL = la misma de Sy
+      SUPABASE_SECRET_KEY = la misma de Sy
+      CLO_CHANNEL_ID = ID del canal de Clo
+
+6) Railway ejecuta npm start. No necesitas .env en Railway.
+
+YA INCLUYE:
+- conversación sin @ en su canal
+- historial persistente
+- memoria larga + deduplicación/actualización
+- selección de recuerdos con Claude Haiku 5.5
+- imágenes
+- iniciativa espontánea
+- primer seed de historia de Clo
+- tablas clo_* separadas de Sy
+
+NO INCLUYE VOZ TODAVÍA:
+Claude API no usa audio nativo en este flujo. Para notas de voz/llamadas hay que
+sumar transcripción + TTS con otro proveedor, mejor como módulo separado.

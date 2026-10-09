@@ -1,0 +1,19 @@
+{
+  "name": "clo-discord",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "check": "node --check index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.67.0",
+    "@supabase/supabase-js": "^2.76.1",
+    "discord.js": "^14.22.1"
+  }
+}
